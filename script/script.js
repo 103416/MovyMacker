@@ -2,7 +2,7 @@ let path = window.location.pathname;
 let fileName = path.substring(path.lastIndexOf('/') + 1);
 
 let i = 0
-let screens = ["./screen1.html","./screen2.html","./index.html","./screen3.html","./screen4.html"]
+let screens = ["./DCS.html","./FCS.html","./index.html","./NAV.html","./HOL.html"]
 if(fileName === "screen4.html"){
     i = 4
 }
