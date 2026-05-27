@@ -1,21 +1,20 @@
 let path = window.location.pathname;
 let fileName = path.substring(path.lastIndexOf('/') + 1);
-
 let i = 0
-let screens = ["./screen1.html","./screen2.html","./index.html","./screen3.html","./screen4.html"]
-if(fileName === "screen4.html"){
+let screens = ["./FCS.html","./DCS.html","./index.html","./NAV.html","./HOL.html"]
+if(fileName === "HOL.html"){
     i = 4
 }
-if(fileName === "screen3.html"){
+if(fileName === "NAV.html"){
     i = 3
 }
 if(fileName === "index.html"){
     i = 2
 }
-if(fileName === "screen2.html"){
+if(fileName === "DCS.html"){
     i = 1
 }
-if(fileName === "screen1.html"){
+if(fileName === "FCS.html"){
     i = 0
 }
 window.addEventListener("keypress", (e) => {
