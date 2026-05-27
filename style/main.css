@@ -17,8 +17,12 @@ body{
         top: 20%;
         justify-self: center;
     }
-    10% {
-        top: 19%;
+    50% {
+        top: 18%;
+        justify-self: center;
+    }
+    100% {
+        top: 20%;
         justify-self: center;
     }
 }
