@@ -1,0 +1,24 @@
+body{
+    background-color: rgb(0, 0, 0);
+}
+
+.republic{
+    position: relative;
+    top: 20%;
+    justify-self: center;
+    background: radial-gradient(rgba(255, 0, 0, 0.837), rgba(255, 0, 0, 0.045) 73%);
+    filter:brightness(10px);
+    border-radius: 50%;
+    padding: 50px;
+    animation: up-down 5s infinite;
+}
+@keyframes up-down{
+    0% {
+        top: 20%;
+        justify-self: center;
+    }
+    10% {
+        top: 19%;
+        justify-self: center;
+    }
+}
