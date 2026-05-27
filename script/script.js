@@ -1,7 +1,6 @@
 let path = window.location.pathname;
 let fileName = path.substring(path.lastIndexOf('/') + 1);
 
-alert(fileName)
 let i = 0
 let screens = ["./screen1.html","./screen2.html","./index.html","./screen3.html","./screen4.html"]
 if(fileName === "screen4.html"){
@@ -19,15 +18,23 @@ if(fileName === "screen2.html"){
 if(fileName === "screen1.html"){
     i = 0
 }
-
-
 window.addEventListener("keypress", (e) => {
     if(e.key === "d"){
-        i++
-        window.location.replace(screens[i])
+        if(3 < i){
+            console.log("je kan niet verder");
+        }
+        else{
+            i++
+            window.location.replace(screens[i])
+        }
     }
     if(e.key === "a"){
-        i--
-        window.location.replace(screens[i])
+        if(1 > i){
+            console.log("je kan niet verder");
+        }
+        else{
+            i--;
+            window.location.replace(screens[i]);
+        }
     }
 })
