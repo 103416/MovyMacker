@@ -10,17 +10,26 @@
     <link rel="stylesheet" href="./style/screen1.css">
 </head>
 <body>
+    <div id="bullets"></div>
     <main id="main">
-        screen 1
-        (niels)
+        <div id="ship">
+            <div id="turret">
+                <div id="barrel-small"></div>
+            </div>
+        </div>
+        <div id="space">
+        </div>
     </main>
     <sidebar id="sidebar">
-        <button id="Main-cannon" onclick="Main()">Fire Main Cannons</button><br>
-        <button id="Secundaire-cannon" onclick="Sec()">fire Secundaire Cannons</button><br>
-        <button id="Laser-cannon" onclick="Laser()">fire lasers Cannons</button><br>
-        <button id="Release-TieFighters" onclick="Tie()">Release TieFighters</button><br>
+        <button id="Main-cannon" onclick="shoot()">Fire Main Cannons</button><br>
+        <button id="Secundaire-cannon" onclick="Sec()">Fire Secundaire Cannons</button><br>
+        <button id="Laser-cannon" onclick="Laser()">Fire Laser Cannons</button><br>
+        <button id="Release-TieFighters" onclick="Tie()">Release Tie Fighters</button><br>
+
+        <br><br>
+        <label for="turretSlider">Turret Rotation:</label>
+        <input type="range" max="360" min="0" step="10" id="turretSlider" onchange="turretSlider()" oninput="turretSlider()">
+        <span id="turretAngle">0°</span>
     </sidebar>
-
-
 </body>
 </html>
