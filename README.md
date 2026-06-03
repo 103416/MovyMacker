@@ -9,3 +9,4 @@ NAV = Navigation
 
 
 # bruh, effectiveness 0,1%
+rx
