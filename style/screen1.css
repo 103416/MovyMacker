@@ -1,0 +1,38 @@
+:root{
+    --primary-color: #000000;
+    --secondary-color: #ff0000;
+    --background-color: #0000ff;
+    --white: #ffffff;
+}
+
+body{
+    background-color: var(--primary-color);
+    color: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "mains sidebars"
+    "mains sidebars"
+    ;
+}
+
+button{
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 200px;
+}
+
+#main{
+    grid-area: mains;
+    background-color: var(--background-color);
+    height: 90vh;
+}
+
+#sidebar{
+    grid-area: sidebars;
+    background-color: #974646;
+}
