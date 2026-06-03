@@ -9,6 +9,7 @@ body{
     background-color: var(--primary-color);
     color: var(--white);
     display: grid;
+    overflow: hidden;
     grid-template-columns: 1fr 300px;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: 
@@ -28,9 +29,66 @@ button{
 
 #main{
     grid-area: mains;
-    background-color: var(--background-color);
-    height: 90vh;
+    height: 99vh;
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "space ship"
+    "space ship"
+    ;
 }
+#space{
+    grid-area: space;
+}
+
+.star{
+    position: absolute;
+    aspect-ratio: 1;
+    background-color: white;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+
+#ship{
+    grid-area: ship;
+    background: #fff;
+}
+
+#turretSlider{
+    width: calc(100% - 40px);
+    display: flex;
+    justify-self: center;
+}
+
+#turret{
+    background-color: aqua;
+    width: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    aspect-ratio: 1;
+    transition: 0.4s all;
+}
+
+#barrel-small{
+    width: 100px;
+    height: 20px;
+    background-color: #0000ff;
+    transform: translateX(-80%);
+}
+
+.bullet {
+    width: 100px; /* Adjusted width to look like a bullet */
+    height: 10px; /* Adjusted height to look like a bullet */
+    background: linear-gradient(-90deg, #ff0000, #ff000000); /* Gradient for a more dynamic look */
+    z-index: 100;
+    position: absolute; /* Ensures proper positioning */
+    border-radius: 0 50% 50% 0; /* Slightly rounded edges for a bullet-like appearance */
+    transform-origin: center; /* Ensures rotation happens around the center */
+}
+
 
 #sidebar{
     grid-area: sidebars;
