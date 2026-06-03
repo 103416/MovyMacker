@@ -10,5 +10,31 @@ for (let i = 0; i < 250; i++) {
 
 }
 
+const firstSound = document.getElementById("sound-clsh");
+const humSound = document.getElementById("sound-hum");
+const textElement = document.getElementById("home-text");
+
+function startIntroAudio() {
+    if (!firstSound || !humSound) return;
+
+    firstSound.currentTime = 0;
+    humSound.pause();
+    humSound.currentTime = 0;
+
+    firstSound.play().catch(() => {});
+}
+
+function switchToHum() {
+    if (!firstSound || !humSound) return;
+
+    firstSound.pause();
+    humSound.currentTime = 0;
+    humSound.play().catch(() => {});
+}
+
+window.addEventListener("load", startIntroAudio);
+textElement?.addEventListener("animationstart", startIntroAudio);
+textElement?.addEventListener("a", switchToHum);
+
 
 
