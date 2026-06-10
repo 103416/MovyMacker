@@ -1,0 +1,27 @@
+body{
+    background-color: black;
+    overflow: hidden;
+}
+
+#dcs{
+    color: white;
+    text-align: center;
+    font-size: 3vh;
+    background-color: transparent;
+}
+
+
+#starry_night{
+    width: 100%;
+    height: 100%; 
+    position: absolute;
+    z-index: 0;
+    
+}
+.star{
+    position: absolute;
+    aspect-ratio: 1;
+    background-color: white;
+    border-radius: 50%;
+    z-index: -1;
+}
