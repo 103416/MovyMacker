@@ -16,6 +16,12 @@
             <div id="turret">
                 <div id="barrel-small"></div>
             </div>
+            <div id="big-turret">
+                <div id="barrel-big"></div>
+            </div>
+            <div id="laser">
+                <div id="barrel-laser"></div>
+            </div>
         </div>
         <div id="space">
         </div>
@@ -24,12 +30,15 @@
         <button id="Main-cannon" onclick="shoot()">Fire Main Cannons</button><br>
         <button id="Secundaire-cannon" onclick="Sec()">Fire Secundaire Cannons</button><br>
         <button id="Laser-cannon" onclick="Laser()">Fire Laser Cannons</button><br>
-        <button id="Release-TieFighters" onclick="Tie()">Release Tie Fighters</button><br>
 
         <br><br>
         <label for="turretSlider">Turret Rotation:</label>
         <input type="range" max="360" min="0" step="10" id="turretSlider" onchange="turretSlider()" oninput="turretSlider()">
+        <input type="range" max="360" min="0" step="10" id="turretSlider1" onchange="turretSlider1()" oninput="turretSlider1()">
+        <input type="range" max="360" min="0" step="10" id="turretSlider2" onchange="turretSlider2()" oninput="turretSlider2()">
         <span id="turretAngle">0°</span>
+        <span id="turretAngle1">0°</span>
+        <span id="turretAngle2">0°</span>
     </sidebar>
 </body>
 </html>
