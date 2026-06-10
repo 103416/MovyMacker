@@ -7,7 +7,7 @@ FCS = Fire Control System
 HOL = Hologram
 NAV = Navigation
 
-
+# Enter Sandman
 Take my hand.
 Take my hand.
 Say your prayers, little one, don't forget, my son.
@@ -65,7 +65,7 @@ Whoa-oh-oh, oh.
 
 
 
-
+# Master of Puppets
 End of passion play, crumbling away.
 I'm your source of self-destruction.
 Veins that pump with fear, sucking darkest clear.
