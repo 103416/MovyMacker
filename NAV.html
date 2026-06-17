@@ -8,22 +8,39 @@
     <script src="script/NAV.js" defer></script>
     <link rel="stylesheet" href="style/NAV.css">
 </head>
-<body>
-    <img src="videos/navigation-animation-blender.gif" alt="navigation animation" id="nav_video">
-    <img src="nav" alt="">
-    <div class="coordinates">
-        <div class="coordinate">
-            <h4>X:</h4>
-            <span id="x"></span>
+<body id="body_page">
+    <div id="whole_page">
+        <img src="videos/navigation-animation-blender.gif" alt="navigation animation" id="nav_video">
+        <div class="coordinates">
+            <div class="coordinate">
+                <h4>X:</h4>
+                <span id="x"></span>
+                <br><br><br>
+                <span>Travel to: </span>
+                <br>
+                <input type="number" id="x_input">
+            </div>
+            <div class="coordinate">
+                <h4>Y:</h4>
+                <span id="y"></span>
+                <br><br><br>
+                <span>Travel to: </span>
+                <br>
+                <input type="number" id="y_input">
+            </div>
+            <div class="coordinate">
+                <h4>Z:</h4>
+                <span id="z"></span>
+                <br><br><br>
+                <span>Travel to: </span>
+                <br>
+                <input type="number" id="z_input">
+            </div>
         </div>
-        <div class="coordinate">
-            <h4>Y:</h4>
-            <span id="y"></span>
-        </div>
-        <div class="coordinate">
-            <h4>Z:</h4>
-            <span id="z"></span>
+        <div class="controls">
+            <button onclick="travel()" class="go_btn">Travel</button>
         </div>
     </div>
+    <video src="videos/Star Destroyer Animation 2.mp4" id="takeoff_animation"></video>
 </body>
 </html>
