@@ -41,3 +41,13 @@ body {
 video {
     width: 99vw;
 }
+
+@keyframes warpLeft {
+    0% { transform: translateX(0); opacity: 1; }
+    100% { transform: translateX(100vw); opacity: 0; }
+}
+
+@keyframes warpRight {
+    0% { transform: translateX(0); opacity: 1; }
+    100% { transform: translateX(-100vw); opacity: 0; }
+}
