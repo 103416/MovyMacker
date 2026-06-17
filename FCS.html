@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="./script/script.js" defer></script>
-    <script src="./script/script_scripts/FCS.js" defer></script>
+    <script src="./FCS.js" defer></script>
+    <script src="./server.js"></script>
 
     <link rel="stylesheet" href="./style/screen1.css">
 </head>
@@ -30,15 +31,20 @@
         <button id="Main-cannon" onclick="shoot()">Fire Main Cannons</button><br>
         <button id="Secundaire-cannon" onclick="Sec()">Fire Secundaire Cannons</button><br>
         <button id="Laser-cannon" onclick="Laser()">Fire Laser Cannons</button><br>
+        <hr>
+
+        <p id="mainCount">Main Cannon Shots: 0</p>
+        <p id="secondaryCount">Secondary Cannon Shots: 0</p>
+        <p id="laserCount">Laser Cannon Shots: 0</p>
 
         <br><br>
-        <label for="turretSlider">Turret Rotation:</label>
-        <input type="range" max="360" min="0" step="10" id="turretSlider" onchange="turretSlider()" oninput="turretSlider()">
-        <input type="range" max="360" min="0" step="10" id="turretSlider1" onchange="turretSlider1()" oninput="turretSlider1()">
-        <input type="range" max="360" min="0" step="10" id="turretSlider2" onchange="turretSlider2()" oninput="turretSlider2()">
-        <span id="turretAngle">0°</span>
-        <span id="turretAngle1">0°</span>
-        <span id="turretAngle2">0°</span>
+        <label for="turretSlider">Turret Rotation:</label><br>
+        <input type="range" max="360" min="0" step="10" id="turretSlider" onchange="turretSlider()" oninput="turretSlider()"><br>
+        <span id="turretAngle">0°</span><br>
+        <input type="range" max="360" min="0" step="10" id="turretSlider1" onchange="turretSlider1()" oninput="turretSlider1()"><br>
+        <span id="turretAngle1">0°</span><br>
+        <input type="range" max="360" min="0" step="10" id="turretSlider2" onchange="turretSlider2()" oninput="turretSlider2()"><br>
+        <span id="turretAngle2">0°</span><br>
     </sidebar>
 </body>
 </html>
