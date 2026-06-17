@@ -1,3 +1,7 @@
-.sketchfab-embed-wrapper {
-    
+body {
+    background-color: black;
+}
+
+video {
+    width: 99vw;
 }
