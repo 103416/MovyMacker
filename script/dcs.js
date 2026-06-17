@@ -136,3 +136,4 @@ setTimeout(() => {
     result.textContent = "SYSTEM READY";
 
 }, 10000);
+
