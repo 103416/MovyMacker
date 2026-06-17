@@ -12,9 +12,28 @@ let x_as = document.getElementById("x");
 let y_as = document.getElementById("y");
 let z_as = document.getElementById("z");
 
-let x = Math.floor(Math.random() * 1000000);
-let y = Math.floor(Math.random() * 1000000);
-let z = Math.floor(Math.random() * 1000000);
+let x = localStorage.getItem("x_as_getal");
+let y = localStorage.getItem("y_as_getal");
+let z = localStorage.getItem("z_as_getal");
+
+// let x = Math.floor(Math.random() * 1000000);
+// let y = Math.floor(Math.random() * 1000000);
+// let z = Math.floor(Math.random() * 1000000);
+
+if (x === null) {
+    x = Math.floor(Math.random() * 1000000);
+    localStorage.setItem("x_as_getal", x);
+}
+
+if (y === null) {
+    y = Math.floor(Math.random() * 1000000);
+    localStorage.setItem("y_as_getal", y);
+}
+
+if (z === null) {
+    z = Math.floor(Math.random() * 1000000);
+    localStorage.setItem("z_as_getal", z);
+}
 
 x_as.innerText = x;
 y_as.innerText = y;
@@ -37,9 +56,9 @@ function travel() {
     console.log("z: " + z_input);
 
     if (x_input !== "" || y_input !== "" || z_input !== "") {
-        if (x_input !== "") { x_as.innerText = x_input; }
-        if (y_input !== "") { y_as.innerText = y_input; }
-        if (z_input !== "") { z_as.innerText = z_input; }
+        if (x_input !== "") { x_as.innerText = x_input; localStorage.setItem("x_as_getal", x_input)}
+        if (y_input !== "") { y_as.innerText = y_input; localStorage.setItem("y_as_getal", y_input)}
+        if (z_input !== "") { z_as.innerText = z_input; localStorage.setItem("z_as_getal", z_input)}
 
         document.getElementById("x_input").value = "";
         document.getElementById("y_input").value = "";
