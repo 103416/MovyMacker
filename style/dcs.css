@@ -3,9 +3,16 @@ body{
     overflow: hidden;
 }
 
+#damage{
+    z-index: 1;
+    position: relative;
+    justify-self: center;
+    align-self: center;
+}
 
 #dcs{
     color: white;
+    position: relative;
     text-align: center;
     font-size: 3vh;
     background-color: transparent;
@@ -25,4 +32,123 @@ body{
     background-color: white;
     border-radius: 50%;
     z-index: -1;
+}
+
+#damage{
+    position: relative;
+    width: fit-content;
+    margin: auto;
+}
+
+#ship{
+    display: block;
+}
+
+.section{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background-color: rgba(255,0,0,0.35);
+    display: none;
+    cursor: pointer;
+}
+
+#front{
+    left: 0;
+    width: 33.33%;
+}
+
+#middle{
+    left: 33.33%;
+    width: 33.33%;
+}
+
+#rear{
+    left: 66.66%;
+    width: 33.33%;
+}
+
+.section:hover{
+    background-color: rgba(255,0,0,0.55);
+}
+
+.damageFound{
+    animation: explosion 0.8s ease;
+}
+
+.damageFree{
+    animation: clearZone 0.8s ease;
+}
+
+@keyframes explosion{
+    0%{
+        transform: scale(1);
+        background-color: rgba(255,0,0,0.35);
+    }
+    50%{
+        transform: scale(1.15);
+        background-color: orange;
+    }
+    100%{
+        transform: scale(1);
+        background-color: rgba(255,0,0,0.35);
+    }
+}
+
+@keyframes clearZone{
+    0%{
+        background-color: rgba(255,0,0,0.35);
+    }
+    50%{
+        background-color: lime;
+    }
+    100%{
+        background-color: rgba(255,0,0,0.35);
+    }
+}
+
+#result{
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+#repairBtn{
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #222;
+    color: white;
+    border: 2px solid red;
+    cursor: pointer;
+    z-index: 3;
+}
+
+#repairBtn:disabled{
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.repaired{
+    background-color: rgba(0,255,0,0.6) !important;
+}
+
+#repairBtn{
+    position: relative;
+    z-index: 9999;
+}
+.section{
+    z-index: 2;
+}
+
+.repairing{
+    animation: repairBlink 0.5s infinite;
+}
+
+@keyframes repairBlink{
+    0%{ background: rgba(255,255,0,0.4); }
+    50%{ background: rgba(255,100,0,0.6); }
+    100%{ background: rgba(255,255,0,0.4); }
 }
