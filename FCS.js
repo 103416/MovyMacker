@@ -48,6 +48,31 @@ function exportStats() {
   a.download = "stats.json";
   a.click();
 }
+function rotateTurret(sliderId, turretId, barrelId, angleDisplayId) {
+  const rotation = parseFloat(document.getElementById(sliderId).value);
+  const turret = document.getElementById(turretId).style;
+  const barrel = document.getElementById(barrelId).style;
+
+  // Rotate the turret and barrel
+  turret.transform = `rotate(${rotation}deg)`;
+  barrel.transform = `rotate(${rotation}deg)`;
+
+  // Update the angle display
+  document.getElementById(angleDisplayId).innerText = `${rotation}°`;
+}
+
+// Attach the rotateTurret function to each slider
+function turretSlider() {
+  rotateTurret("turretSlider", "turret", "barrel-small", "turretAngle");
+}
+
+function turretSlider1() {
+  rotateTurret("turretSlider1", "big-turret", "barrel-big", "turretAngle1");
+}
+
+function turretSlider2() {
+  rotateTurret("turretSlider2", "laser", "barrel-laser", "turretAngle2");
+}
 
 // Remove saveStats calls from shoot, Sec, and Laser
 function shoot() {
@@ -70,39 +95,45 @@ function Laser() {
 
 // Create and move a bullet
 function createBullet(bulletClass, barrelId, sliderId, speed = 25) {
-  const rotation = parseFloat(document.getElementById(sliderId).value);
+  const rotation = parseFloat(document.getElementById(sliderId).value); // Get the rotation from the slider
   const bullet = document.createElement("div");
   bullet.classList.add(bulletClass);
 
   const barrel = document.getElementById(barrelId);
   const barrelRect = barrel.getBoundingClientRect();
-  const turret = barrel.parentElement;
-  const turretRect = turret.getBoundingClientRect();
 
-  const barrelCenterX = turretRect.left + turretRect.width / 2;
-  const barrelCenterY = turretRect.top + turretRect.height / 2;
+  // Calculate the center of the barrel
+  const barrelCenterX = barrelRect.left + barrelRect.width / 2;
+  const barrelCenterY = barrelRect.top + barrelRect.height / 2;
 
+  // Calculate the angle in radians (no adjustment for -90 degrees)
   const angle = rotation * (Math.PI / 180);
-  let bulletX = barrelCenterX + Math.cos(angle) * (barrelRect.width / 2 + 10);
-  let bulletY = barrelCenterY + Math.sin(angle) * (barrelRect.width / 2 + 10);
 
+  // Calculate the starting position of the bullet (end of the barrel)
+  const bulletX = barrelCenterX + Math.cos(angle) * (barrelRect.height / 2);
+  const bulletY = barrelCenterY + Math.sin(angle) * (barrelRect.height / 2);
+
+  // Set the bullet's initial position and rotation
+  bullet.style.position = "absolute";
   bullet.style.left = `${bulletX}px`;
   bullet.style.top = `${bulletY}px`;
   bullet.style.transform = `rotate(${rotation}deg)`;
   document.body.appendChild(bullet);
 
+  // Function to move the bullet
   function moveBullet() {
-    bulletX += Math.cos(angle) * speed;
-    bulletY += Math.sin(angle) * speed;
+    const moveX = Math.cos(angle) * speed;
+    const moveY = Math.sin(angle) * speed;
 
-    bullet.style.left = `${bulletX}px`;
-    bullet.style.top = `${bulletY}px`;
+    bullet.style.left = `${parseFloat(bullet.style.left) + moveX}px`;
+    bullet.style.top = `${parseFloat(bullet.style.top) + moveY}px`;
 
+    // Remove the bullet if it goes out of bounds
     if (
-      bulletX < 0 ||
-      bulletY < 0 ||
-      bulletX > window.innerWidth ||
-      bulletY > window.innerHeight
+      parseFloat(bullet.style.left) < 0 ||
+      parseFloat(bullet.style.top) < 0 ||
+      parseFloat(bullet.style.left) > window.innerWidth ||
+      parseFloat(bullet.style.top) > window.innerHeight
     ) {
       bullet.remove();
     } else {
@@ -112,7 +143,6 @@ function createBullet(bulletClass, barrelId, sliderId, speed = 25) {
 
   moveBullet();
 }
-
 // Rotate turret based on slider value
 function rotateTurret(sliderId, turretId, angleDisplayId) {
   const rotation = parseFloat(document.getElementById(sliderId).value);

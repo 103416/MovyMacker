@@ -1,6 +1,9 @@
 let path = window.location.pathname;
 let fileName = path.substring(path.lastIndexOf('/') + 1);
 let i = 0
+console.log("script.js loaded");
+
+
 let screens = ["./FCS.html","./DCS.html","./index.html","./NAV.html","./HOL.html"]
 if(fileName === "HOL.html"){
     i = 4
@@ -17,26 +20,24 @@ if(fileName === "DCS.html"){
 if(fileName === "FCS.html"){
     i = 0
 }
-window.addEventListener("keypress", (e) => {
-    if(e.key === "d"){
-        if(3 < i){
+window.addEventListener("keydown", (e) => {
+    if (e.key === "d") {
+        if (i >= 4) {
             console.log("je kan niet verder");
-        }
-        else{
-            i++
-            window.location.replace(screens[i])
+        } else {
+            i++;
+            window.location.replace(screens[i]);
         }
     }
-    if(e.key === "a"){
-        if(1 > i){
+    if (e.key === "a") {
+        if (i <= 0) {
             console.log("je kan niet verder");
-        }
-        else{
+        } else {
             i--;
             window.location.replace(screens[i]);
         }
     }
-})
+});
 
 for (let i = 0; i < 250; i++) {
     let middle = document.getElementById("starry_night")
