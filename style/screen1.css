@@ -47,6 +47,7 @@ body{
     overflow: hidden;
     grid-template-columns: 1fr 300px;
     grid-template-rows: 1fr 1fr;
+    font-family: Arial;
     grid-template-areas: 
     "mains sidebars"
     "mains sidebars"
@@ -54,13 +55,17 @@ body{
 }
 
 button{
-    background-color: var(--secondary-color);
+    background-color: #a2a2a2;
     color: var(--white);
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     width: 200px;
     margin: 10px;
+    border-radius: 10px ;
+}
+button:hover{
+    background-color: #8c8c8c;
 }
 
 #main{
@@ -89,7 +94,7 @@ button{
 
 #ship{
     grid-area: ship;
-    background: #fff;
+    background: #cecece;
     display: flex;
     flex-direction: column;
     z-index: 10;
@@ -150,6 +155,8 @@ button{
     background-color: #909090;
     transform: translateX(-80%);
     z-index: 2;
+    position: relative;
+    left: -10px;
 
 }
 #barrel-big{
@@ -158,6 +165,8 @@ button{
     background-color: #909090;
     transform: translateX(-80%);
     z-index: 20;
+    position: relative;
+    left: -35px;
 
 }
 #barrel-laser{
@@ -166,7 +175,8 @@ button{
     background-color: #909090;
     transform: translateX(-80%);
     z-index: 20 ;
-
+    position: relative;
+    left: -5px;
 }
 
 
@@ -203,7 +213,8 @@ button{
 #sidebar{
     grid-area: sidebars;
     z-index: 15;
-    background-color: #974646;
+    background-color: #6d6d6d;
+    text-align: center;
 }
 
 @keyframes warpLeft {
