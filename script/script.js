@@ -70,7 +70,7 @@ function goToPage(index, direction) {
     if (index < 0 || index >= pages.length) return;
 
     transition.classList.remove("active");
-    void transition.offsetWidth; // reset animation
+    void transition.offsetWidth;
     transition.classList.add("active");
 
     setTimeout(() => {
@@ -78,7 +78,6 @@ function goToPage(index, direction) {
     }, 400);
 }
 
-// keyboard controls
 window.addEventListener("keydown", (e) => {
 
     if (e.key === "a" || e.key === "A") {
