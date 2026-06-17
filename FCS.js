@@ -28,10 +28,11 @@ async function saveStats() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(stats),
     });
+    console.log("Stats saved successfully!");
   } catch (error) {
     console.error("Error saving stats:", error);
-  }}
-
+  }
+}
 // Update the stats display
 function updateStats() {
   document.getElementById("mainCount").textContent = `Main Cannon Shots: ${stats.mainCannon}`;
@@ -48,27 +49,22 @@ function exportStats() {
   a.click();
 }
 
-// Handle shooting for the main cannon
+// Remove saveStats calls from shoot, Sec, and Laser
 function shoot() {
   stats.mainCannon++;
   updateStats();
-  saveStats();
   createBullet("bullet", "barrel-small", "turretSlider");
 }
 
-// Handle shooting for the secondary cannon
 function Sec() {
   stats.secondaryCannon++;
   updateStats();
-  saveStats();
   createBullet("big-bullet", "barrel-big", "turretSlider1");
 }
 
-// Handle shooting for the laser cannon
 function Laser() {
   stats.laserCannon++;
   updateStats();
-  saveStats();
   createBullet("laser-bullet", "barrel-laser", "turretSlider2", 10);
 }
 
