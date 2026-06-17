@@ -50,3 +50,43 @@ for (let i = 0; i < 250; i++) {
     document.querySelector("#starry_night").appendChild(create_div);
 
 }
+
+const pages = [
+    "index.html",
+    "nav.html",
+    "dcs.html",
+    "fcs.html"
+];
+
+let currentPage = pages.indexOf(window.location.pathname.split("/").pop());
+if (currentPage === -1) currentPage = 0;
+
+// create transition overlay
+const transition = document.createElement("div");
+transition.classList.add("page-transition");
+document.body.appendChild(transition);
+
+function goToPage(index, direction) {
+    if (index < 0 || index >= pages.length) return;
+
+    transition.classList.remove("active");
+    void transition.offsetWidth; // reset animation
+    transition.classList.add("active");
+
+    setTimeout(() => {
+        window.location.href = pages[index];
+    }, 400);
+}
+
+// keyboard controls
+window.addEventListener("keydown", (e) => {
+
+    if (e.key === "a" || e.key === "A") {
+        goToPage(currentPage - 1, "left");
+    }
+
+    if (e.key === "d" || e.key === "D") {
+        goToPage(currentPage + 1, "right");
+    }
+
+});
